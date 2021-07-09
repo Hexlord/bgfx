@@ -7185,14 +7185,14 @@ namespace bgfx { namespace gl
 		{
 			BGFX_PROFILER_SCOPE("bgfx/Update transient index buffer", kColorResource);
 			TransientIndexBuffer* ib = _render->m_transientIb;
-			m_indexBuffers[ib->handle.idx].update(0, _render->m_iboffset, ib->data, true);
+			m_indexBuffers[ib->handle.idx].update(0, _render->m_iboffset, ib->data, false);
 		}
 
 		if (0 < _render->m_vboffset)
 		{
 			BGFX_PROFILER_SCOPE("bgfx/Update transient vertex buffer", kColorResource);
 			TransientVertexBuffer* vb = _render->m_transientVb;
-			m_vertexBuffers[vb->handle.idx].update(0, _render->m_vboffset, vb->data, true);
+			m_vertexBuffers[vb->handle.idx].update(0, _render->m_vboffset, vb->data, false);
 		}
 
 		_render->sort();
